@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('role')->nullable();
             $table->string('contact_number')->nullable();
             $table->longText('biography')->nullable();
+            $table->foreign('detail_user_id')->references('id')->on('detail_user')->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
         });

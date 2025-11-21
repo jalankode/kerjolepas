@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('service_id')->nullable();
             $table->string('tagline');
+            $table->foreign('service_id')->references('id')->on('service')->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
         });

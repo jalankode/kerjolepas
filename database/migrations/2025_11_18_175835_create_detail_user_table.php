@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('role');
             $table->string('contact_number');
             $table->longText('biography');
+            $table->foreign('user_id')->references('id')->on('user')->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
         });
